@@ -1,0 +1,145 @@
+Entity :
+    SALARIE:
+        ☐ id
+        ☐ user_id
+        ☐ nom
+        ☐ non_jeune_fille
+        ☐ prenom
+        ☐ bithday
+        ☐ lieu_naissance
+        ☐ dpt_naissance
+        ☐ sexe
+        ☐ num_secu_sociale
+        ☐ carnet_delivre
+        ☐ mail_perso
+        ☐ agence
+        ☐ num_carnet_acces
+        ☐ nni
+    EMPLOYEUR:
+        ☐ id
+        ☐ nom
+        ☐ siret
+        ☐ addresse
+        ☐ code_postal
+        ☐ ville
+        ☐ telephone
+        ☐ num_cefri
+        ☐ fin_validite_cefri
+    CARNET D'ACCES:
+        ☐ id
+        ☐ numero
+        ☐ salarie_id
+    COFREND:
+        ☐ id
+        ☐ technique
+    PROCEDURE QUALIFIES:
+        ☐ id
+        ☐ procedure_technique_id
+        ☐ numero
+        ☐ nom
+        ☐ rdu
+        ☐ indice
+    HABILITATIONS:
+        ☐ id
+        ☐ certificat
+        ☐ nom
+        ☐ code_organisme_formation
+        ☐ date_habilitation
+        ☐ duree_validite
+        ☐ salarie_id
+    CHAPITRE:
+        ☐ titre
+        ☐ date
+    COURS:
+        ☐ titre
+        ☐ contenu
+        ☐ date
+    USER:
+        ☐ id
+        ☐ email
+        ☐ roles
+        ☐ password
+        ☐ isVerified
+
+Relation entre tables:
+      ☐ cours => chapitres ==> ManyToOne (Un cours à plusieurs chapitres)
+      ☐ chapitres => cours ==> OneToMany (Un chapitre peut appartenir à plusieurs cours)
+
+DataFixtures:
+    Dépendences:
+        ☐ composer require doctrine/doctrine-fixtures-bundle
+        ☐ composer require fakerphp/faker
+    DataFixtures:
+        ☐ CofrendFixtures
+        ☐ EmployeurFixtures
+        ☐ HabilitationsFixtures
+        ☐ SalarieFixtures
+        ☐ NiveauxFixtures
+        ☐ ProceduresQaulifiesFixtures
+
+Scripts data fixtures :
+    ☐ Insérer dans le composer.json le script suivant
+        "fixtures-start": [
+                "php bin/console doctrine:database:drop --if-exists --force",
+                "php bin/console doctrine:database:create",
+                "php bin/console doctrine:schema:update --force",
+                "php bin/console doctrine:fixtures:load -n"
+            ],
+
+Mettre en place l'authentification:
+    ☐ Commande Symfony console:make:user
+    ☐ Config connexion => Mail + Password
+Bootstrap Layout Form:
+    Dans config/package/twig.yaml
+        ☐ Remplacer default_path: '%kernel.project_dir%/templates'par form_themes: ['bootstrap_5_layout.html.twig']
+Relié User et Salariés:
+    ☐ Mail = prenom.nom@technisonic.fr
+    ☐ Mot de passe à encoder
+
+Espace de connexion:
+    Homepage anonyme:
+        ☐ Page de Login
+    Homepage utilisateur connecté:
+        ☐ dashboard individuelle
+    Authentification:
+        ☐ Creation classe pour vérification (symfony console make:auth)
+        ☐ Creation du formulaire de login (symfony console make:controller SecurityController)
+        ☐ Creation du formulaire de login(symfony console make:form LoginType)
+
+Fonctionnalités:
+    ☐ se connecter a son espace via le bouton de connexion
+    ☐ Si pas de compte (nouvel embauché..) faire la demande a l'admin de création de compte
+Logique des ROLES:
+    USER:
+        ☐ En tant que user je peux lire un cours
+        ☐ En tant que user je peux faire les questionnaires d'entrainement COFREND
+        ☐ En tant que user je peux passer les procédures qualifié dans une technique dont je suis certifié
+            ☐ Si je n'ai pas de COFREND la session procédures qualifié n'est pas visible
+    FORMATEUR:
+        ☐ Accès aux fonctions user
+        ☐ En tant que formateur je peux creer un cours
+        ☐ En tant que formateur je peux creer des questionnaires
+        ☐ En tant que formateur je sumet mon cours/questionnaire à un chargé d'affaire
+    SUPERVISEUR:
+        ☐ Accès aux fonctions de user
+        ☐ Accès aux fonctions de formateur
+        ☐ En tant que charge d'affaire je peux validé un cours/questionnaire soumis par un formateur
+        ☐ En tant que charge d'affaire je ne peux pas validé un cours/questionnaire si il est rédigé par moi même
+        ☐ En tant que chargé d'affaire je donne l'accès a la plateforme ou creer moi même un nouvel accès
+    ADMIN:
+        ☐ Tous les droits sans restrriction aucune
+
+START :
+    ☐ le site doit demarrer sur la page de login et non une homepage
+
+AUTHENTICATOR:
+    Success:
+        ☐ Redirection vers une home page
+    Failure:
+        ☐ Rester sur la page de login
+        ☐ Afficher les raisons de l'echec de l'authentification (AuthenticationUtils)
+        ☐ Mofifier les messages d'erreurs afficher par Authenticator
+
+@info:
+
+@recherche :
