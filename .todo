@@ -1,21 +1,25 @@
 Entity :
     SALARIE:
-        ☐ id
-        ☐ user_id
-        ☐ nom
-        ☐ non_jeune_fille
-        ☐ prenom
-        ☐ bithday
-        ☐ lieu_naissance
-        ☐ dpt_naissance
-        ☐ sexe
-        ☐ num_secu_sociale
-        ☐ carnet_delivre
-        ☐ mail_perso
-        ☐ agence
-        ☐ num_carnet_acces
-        ☐ nni
-    EMPLOYEUR:
+        ✔ id
+        ✔ nom
+        ✔ prenom
+        ✔ nni
+        ✔ mail_perso
+        ✔ password
+        ✔ roles
+        ✔ isVerified
+        ✔ agence
+        ✘ user_id
+        ✘ non_jeune_fille
+        ✘ bithday
+        ✘ lieu_naissance
+        ✘ dpt_naissance
+        ✘ sexe
+        ✘ num_secu_sociale
+        ✘ carnet_delivre
+        ✘ mail_perso
+        ✘ num_carnet_acces
+    ✘ EMPLOYEUR:
         ☐ id
         ☐ nom
         ☐ siret
@@ -25,41 +29,49 @@ Entity :
         ☐ telephone
         ☐ num_cefri
         ☐ fin_validite_cefri
-    CARNET D'ACCES:
+    ✘ CARNET D'ACCES:
         ☐ id
         ☐ numero
         ☐ salarie_id
     COFREND:
-        ☐ id
-        ☐ technique
-    PROCEDURE QUALIFIES:
-        ☐ id
-        ☐ procedure_technique_id
-        ☐ numero
-        ☐ nom
-        ☐ rdu
-        ☐ indice
-    HABILITATIONS:
-        ☐ id
-        ☐ certificat
-        ☐ nom
-        ☐ code_organisme_formation
-        ☐ date_habilitation
-        ☐ duree_validite
-        ☐ salarie_id
-    CHAPITRE:
-        ☐ titre
-        ☐ date
+        ✔ id
+        ✔ technique
+    PROCEDURES:
+        ✔ id
+        ✔ nom
+        ✔ technique
+        ✔ rdu
+        ✔ indice
+        ✔ isQualified
+    ✘ HABILITATIONS:
+        ✘ id
+        ✘ certificat
+        ✘ nom
+        ✘ code_organisme_formation
+        ✘ date_habilitation
+        ✘ duree_validite
+        ✘ salarie_id
+    ✘ CHAPITRE:
+        ✘ titre
+        ✘ date
     COURS:
-        ☐ titre
-        ☐ contenu
-        ☐ date
-    USER:
+        ✔ titre
+        ✔ contenu
+        ✔ date
+        ✔ formateur
+    QUIZ:
         ☐ id
-        ☐ email
-        ☐ roles
-        ☐ password
-        ☐ isVerified
+        ☐ numero_question
+        ☐ question
+        ☐ proposition
+        ☐ réponse
+        ☐ réponse_user
+    ✘ USER:
+        ✘ id
+        ✘ email
+        ✘ password
+        ✘ roles
+        ✘ isVerified
 
 Relation entre tables:
       ☐ cours => chapitres ==> ManyToOne (Un cours à plusieurs chapitres)
@@ -140,6 +152,8 @@ AUTHENTICATOR:
         ☐ Afficher les raisons de l'echec de l'authentification (AuthenticationUtils)
         ☐ Mofifier les messages d'erreurs afficher par Authenticator
 
+@Etape:
+    ☐ Création de la base de donnée
 @info:
 
-@recherche :
+@recherche:
