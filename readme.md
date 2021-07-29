@@ -8,6 +8,12 @@ Les employés s'y connectant pourront effectuer le passage de procédure qualifi
 END (UT et RT), un certificat d'attestation pourra être téléchargé lors de la
 réussite (validité 1 an)
 
+# Technologies
+
+- Symfony 5.3.x
+- MariaDb
+- API Platform
+
 ## Prérequis
 
 - php 8

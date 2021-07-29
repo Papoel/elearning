@@ -1,0 +1,21 @@
+# Contenu initial :
+# api_platform:
+#     mapping:
+#         paths: ['%kernel.project_dir%/src/Entity']
+#     patch_formats:
+#         json: ['application/merge-patch+json']
+#     swagger:
+#         versions: [3]
+
+# Nouveau contenu :
+api_platform:
+   title: 'Symfony API Platform REST API'
+   description: 'TECHNISONIC - application LMS'
+   author: 'Pascal Briffard'
+   version: '1.0.0'
+   mapping:
+       paths: ['%kernel.project_dir%/src/Entity']
+   patch_formats:
+       json: ['application/merge-patch+json']
+   swagger:
+       versions: [3]
