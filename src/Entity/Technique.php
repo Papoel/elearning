@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\TechniqueRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\TechniqueRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=TechniqueRepository::class)
  */
+#[ApiResource]
 class Technique
 {
     /**

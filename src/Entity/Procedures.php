@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\ProceduresRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ProceduresRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=ProceduresRepository::class)
  */
+#[ApiResource]
 class Procedures
 {
     /**

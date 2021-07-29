@@ -7,8 +7,8 @@ Entity :
         ✔ mail_perso
         ✔ password
         ✔ roles
-        ✔ isVerified
         ✔ agence
+        ✔ isVerified
         ✔ isFormateur
         ✔ isSuperviseur
         ✔ isAdmin
@@ -156,7 +156,20 @@ AUTHENTICATOR:
         ☐ Mofifier les messages d'erreurs afficher par Authenticator
 
 @Etape:
-    ☐ Création de la base de donnée
+    ✔ Création de la base de donnée
 @info:
 
 @recherche:
+
+@Look:
+
+@Rajouter:
+☐ Entity Categorie
+    ☐ PT
+    ☐ MT
+    ☐ UT
+    ☐ RT
+    ☐ Sécurité
+    ☐ Général
+Cette Entity permettra d'assigner une catégorie à un cours et permettre 
+par la suite une fonction de recherche par catégorie.
