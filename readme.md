@@ -12,8 +12,9 @@ réussite (validité 1 an)
 
 - php 8
 - composer 2
-- sous VSC extension [draw.io Integration](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) pour lire le diagramme directemnt dans VSC.
-- Une fois la base de données crée, taper la commande `composer fixtures-start`
+- sous VSC extension [draw.io Integration](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) 
+pour lire le diagramme directement dans VSC.
+
 
 ## Démarrer le projet (mode dev)
 
@@ -21,7 +22,7 @@ réussite (validité 1 an)
 - Lancer les data fixtures
 
     ```bash
-    composer require fixtures_start
+        composer fixtures-start
     ```
 
 Maintenant votre base de donnée comporte quelques données
@@ -33,9 +34,29 @@ Maintenant votre base de donnée comporte quelques données
 
 ## Informations
 
-Projet prfessionnel d'ordre privé
+[Lien vers le dépot Git](https://gitlab.com/Papoel/technisonic_elearning)
 
-=> Intégrer au DP ?? ...
+## Base de donnée
+
+Nom de la base de donnée : `technisonic_elearn_dev`
+
+|Nom des tables  |
+|---------|
+|Salarie     |
+|Cours     |
+|Procedures     |
+|Technique     |
+|Questionnaires     |
+
+#### Relations entre tables
+|Table 1   |Table 2  |Relation |Détail   |
+|--------- |---------|---------|---------|
+|Cours     |Salarie  |ManyToOne|Un **Cours** ne peut avoir qu'un **Salarie** (id du salarie = auteur)|
+|Salarie   |Technique|OneToMany|Un **Salarie** peut avoir plusieur **Technique**|
+|Procedures|Technique|OneToOne |Une **Preocedure** ne peut appartenir qu'a une **Technique**|
+
+> [INFORMATION]
+> La table correspondant aux questionnaires est en étude.
 
 ## Logique des ROLES
 

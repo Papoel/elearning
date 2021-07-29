@@ -64,6 +64,21 @@ class Salarie
      */
     private $cours;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isFormateur;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isSuperviseur;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isAdmin;
+
     public function __construct()
     {
         $this->cours = new ArrayCollection();
@@ -196,6 +211,42 @@ class Salarie
                 $cour->setFormateur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsFormateur(): ?bool
+    {
+        return $this->isFormateur;
+    }
+
+    public function setIsFormateur(bool $isFormateur): self
+    {
+        $this->isFormateur = $isFormateur;
+
+        return $this;
+    }
+
+    public function getIsSuperviseur(): ?bool
+    {
+        return $this->isSuperviseur;
+    }
+
+    public function setIsSuperviseur(bool $isSuperviseur): self
+    {
+        $this->isSuperviseur = $isSuperviseur;
+
+        return $this;
+    }
+
+    public function getIsAdmin(): ?bool
+    {
+        return $this->isAdmin;
+    }
+
+    public function setIsAdmin(bool $isAdmin): self
+    {
+        $this->isAdmin = $isAdmin;
 
         return $this;
     }

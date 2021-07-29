@@ -23,12 +23,6 @@ class Procedures
     private $nom;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Cofrend::class, inversedBy="procedures")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $technique;
-
-    /**
      * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $rdu;
@@ -43,6 +37,11 @@ class Procedures
      */
     private $isQualifie;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Technique::class, inversedBy="procedures", cascade={"persist", "remove"})
+     */
+    private $technique;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -56,18 +55,6 @@ class Procedures
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getTechnique(): ?Cofrend
-    {
-        return $this->technique;
-    }
-
-    public function setTechnique(?Cofrend $technique): self
-    {
-        $this->technique = $technique;
 
         return $this;
     }
@@ -104,6 +91,18 @@ class Procedures
     public function setIsQualifie(?bool $isQualifie): self
     {
         $this->isQualifie = $isQualifie;
+
+        return $this;
+    }
+
+    public function getTechnique(): ?Technique
+    {
+        return $this->technique;
+    }
+
+    public function setTechnique(?Technique $technique): self
+    {
+        $this->technique = $technique;
 
         return $this;
     }

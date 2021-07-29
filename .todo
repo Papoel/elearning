@@ -9,6 +9,9 @@ Entity :
         ✔ roles
         ✔ isVerified
         ✔ agence
+        ✔ isFormateur
+        ✔ isSuperviseur
+        ✔ isAdmin
         ✘ user_id
         ✘ non_jeune_fille
         ✘ bithday
@@ -33,9 +36,9 @@ Entity :
         ☐ id
         ☐ numero
         ☐ salarie_id
-    COFREND:
+    TECHNIQUE:
         ✔ id
-        ✔ technique
+        ✔ name
     PROCEDURES:
         ✔ id
         ✔ nom
