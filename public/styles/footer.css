@@ -1,0 +1,104 @@
+/**************** Footer ****************/
+
+.my-footer {
+   position: relative;
+   color: #fff;
+   padding: 7rem 0;
+   background-color: #141d2a;
+}
+
+.my-footer .container {
+   position: relative;
+}
+
+.my-footer h3 {
+   font-size: 14px;
+   margin-bottom: 10px;
+   margin-top: 0;
+   line-height: 1.5;
+}
+
+.my-footer .links li {
+   line-height: 1.5;
+   display: block;
+}
+
+.my-footer .links li a {
+   color: #666873;
+}
+
+.my-footer .links li a:hover {
+   color: #fff;
+}
+
+.my-footer .social li {
+   display: inline-block;
+   position: relative;
+}
+
+.my-footer .social li a {
+   position: relative;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   display: inline-block;
+   margin: 0;
+   padding: 0;
+   background-color: #8186d5;
+   color: #fff;
+}
+
+.my-footer .social li a>span {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   -webkit-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+}
+
+.my-footer .footer-logo {
+   color: #fff;
+   font-size: 20px;
+   text-transform: uppercase;
+   letter-spacing: .1rem;
+   transition: all 0.5s ease-in-out;
+}
+
+.my-footer .copyright {
+   color: #666873;
+}
+
+.my-footer .cta {
+   -webkit-box-shadow: -15px -15px 0 0 rgba(52, 58, 64, 0.2);
+   box-shadow: -15px -15px 0 0 rgba(52, 58, 64, 0.2);
+   padding: 20px;
+   background-color: #8186d5;
+   top: -150px;
+   position: relative;
+   border-radius: 10px;
+}
+
+.my-footer .cta h2,
+.my-footer .cta h3 {
+   line-height: 1.5;
+}
+
+.my-footer .cta h3 {
+   font-size: 20px;
+}
+
+a {
+   text-decoration: none;
+}
+
+
+/**************** Navbar ****************/
+
+#category {
+   color: #FFFFFF8C;
+}
+
+#category:hover {
+   color: #FFFFFF;
+}
